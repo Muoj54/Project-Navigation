@@ -1,0 +1,61 @@
+<!-- {% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+
+<form method="get" class="mt-3">
+  <div class="row">
+    <div class="col-md-3">
+      <label for="modeSelect" class="form-label">Select Routing Mode:</label>
+      <select class="form-select" id="modeSelect" name="mode">
+        <option value="driving">Driving</option>
+        <option value="walking">Walking</option>
+        <option value="cycling">Cycling</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="startLatInput" class="form-label">Start Latitude:</label>
+      <input type="text" class="form-control" id="startLatInput" name="start_lat">
+    </div>
+    <div class="col-md-2">
+      <label for="startLngInput" class="form-label">Start Longitude:</label>
+      <input type="text" class="form-control" id="startLngInput" name="start_lng">
+    </div>
+    <div class="col-md-2">
+      <label for="endLatInput" class="form-label">End Latitude:</label>
+      <input type="text" class="form-control" id="endLatInput" name="end_lat">
+    </div>
+    <div class="col-md-2">
+      <label for="endLngInput" class="form-label">End Longitude:</label>
+      <input type="text" class="form-control" id="endLngInput" name="end_lng">
+    </div>
+    <div class="col-md-1">
+      <button type="submit" class="btn btn-primary">Plan Route</button>
+    </div>
+  </div>
+</form>
+
+<script>
+    var map = L.map('map').setView([51.505, -0.09], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+  
+    // Assuming `route_data` is already a valid GeoJSON object:
+    var routeData = '{{ route_data|json_encode }}';  // Use json_encode filter
+    L.geoJSON(routeData).addTo(map);
+  </script>
+
+  // OR (if `route_data` comes from user input):
+  // var routeData = {{ route_data|escapejs }};
+  // L.geoJSON(routeData).addTo(map);
+</script>
+{% endblock %}
+
+<a class="nav-link" href="/routes/">Enter Destination</a> -->

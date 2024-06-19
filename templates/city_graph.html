@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>City Graph Result</h2>
+    <div>
+        <h3>Path Information</h3>
+        <p>Distance: {{ path_info.distance }} km</p>
+        <ul>
+            {% for step in path_info.route %}
+            <li>{{ step }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h3>Graph</h3>
+        <img src="{{ graph_image }}" alt="City Graph">
+    </div>
+</div>
+{% endblock %}
